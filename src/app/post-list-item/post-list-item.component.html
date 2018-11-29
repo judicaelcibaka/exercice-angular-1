@@ -1,18 +1,16 @@
 <li [ngClass]="{'list-group-item': true,
-			    'list-group-item-success': postlove > postdontlove,
-				'list-group-item-danger': postlove < postdontlove }">
+			    'list-group-item-success': postlove > 0,
+				'list-group-item-danger': postlove < 0 }">
 
   	<h5 class="post-title">{{posttitle}}</h5> <h6 class="post-creation-date">{{postcreated|date:'d/M/yyyy, h:mm a'}}</h6>
   
   	<p class="post-content-text">{{postcontent}}</p>
-
-  	<p class="get-post-tendance">{{getTendance()}}</p>
   
   	<br>
   	<button class="btn btn-success" 
-          	(click)="postlove = AddLoveIt()">Love It!  ({{postlove}})</button>
+          	(click)="postlove = AddLoveIt()">Love It!</button>
 
   	<button class="btn btn-danger" 
-          	(click)="postdontlove = SubtractLoveIt()">Don't Love It!  ({{postdontlove}})</button>
+          	(click)="postlove = SubtractLoveIt()">Don't Love It!</button>
 
 </li>
